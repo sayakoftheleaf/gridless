@@ -1,2 +1,4 @@
-# gridless
-Top Down RPG
+# GRIDless
+Top Down RPG by Sayak Chatterjee and Surit Thekken
+-
+

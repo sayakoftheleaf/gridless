@@ -11,7 +11,7 @@ extents = Vector2( 6.54514, 10.8795 )
 [sub_resource type="Animation" id=3]
 
 resource/name = "Leftmov"
-length = 1.6
+length = 1.4
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -19,16 +19,16 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 2,
-"values": [ 18, 19, 20, 21, 22, 23, 24, 25, 26 ]
+"values": [ 19, 20, 21, 22, 23, 24, 25, 26 ]
 }
 
 [sub_resource type="Animation" id=4]
 
 resource/name = "Rightmov"
-length = 1.6
+length = 1.4
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -36,16 +36,16 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 2,
-"values": [ 27, 28, 29, 30, 31, 32, 33, 34, 35 ]
+"values": [ 28, 29, 30, 31, 32, 33, 34, 35 ]
 }
 
 [sub_resource type="Animation" id=5]
 
 resource/name = "botmov"
-length = 1.6
+length = 1.4
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -53,16 +53,16 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.39337, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 2,
-"values": [ 9, 10, 11, 12, 13, 14, 15, 0, 16, 17 ]
+"values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
 [sub_resource type="Animation" id=2]
 
 resource/name = "topmove"
-length = 1.6
+length = 1.4
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -70,15 +70,14 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 2,
-"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ]
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 }
 
 [node name="GR3N" type="KinematicBody2D"]
 
-editor/display_folded = true
 transform/pos = Vector2( 128, 233 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -98,13 +97,12 @@ _update_shape_index = 0
 
 [node name="Sprite" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 1, -6 )
 transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 9
-frame = 28
+frame = 10
 region_rect = Rect2( 0, 0, 284.972, 37 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]

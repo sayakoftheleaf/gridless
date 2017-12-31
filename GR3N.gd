@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 #constants
-const DEFAULT_SPEED = 2000
+const DEFAULT_SPEED = 3000
 
 #variables
 var speedx = 0
@@ -31,6 +31,21 @@ func _process(delta):
 	else:
 		refresh = 1
 		
+	directiony = Input.is_action_pressed("ui_down") - Input.is_action_pressed("ui_up")
+	directionx = Input.is_action_pressed("ui_right") - Input.is_action_pressed("ui_left")
+		
+	if (directionx == 1 && walking_animations.get_current_animation() != "Rightmov"):
+		walking_animations.play("Rightmov")
+	elif (directionx == -1 && walking_animations.get_current_animation() != "Leftmov"):
+		walking_animations.play("Leftmov")
+	elif (directiony == 1 && walking_animations.get_current_animation() != "botmov" && directionx == 0):
+		walking_animations.play("botmov")
+	elif (directiony == -1 && walking_animations.get_current_animation() != "topmove" && directionx == 0):
+		walking_animations.play("topmove")
+	elif (directionx == 0 && directiony == 0):
+		print("fudge man", delta)
+		refresh = 1
+	
 	if (refresh == 1):
 		if(walking_animations.get_current_animation() == "topmove"):
 			sprite.set_frame(0)
@@ -42,18 +57,6 @@ func _process(delta):
 			sprite.set_frame(9)
 		refresh = 0
 		
-
-	if (directionx == 1 && walking_animations.get_current_animation() != "Rightmov"):
-		walking_animations.play("Rightmov")
-	elif (directionx == -1 && walking_animations.get_current_animation() != "Leftmov"):
-		walking_animations.play("Leftmov")
-	elif (directiony == 1 && walking_animations.get_current_animation() != "botmov" && directionx == 0):
-		walking_animations.play("botmov")
-	elif (directiony == -1 && walking_animations.get_current_animation() != "topmove" && directionx == 0):
-		walking_animations.play("topmove")
-
-	directiony = Input.is_action_pressed("ui_down") - Input.is_action_pressed("ui_up")
-	directionx = Input.is_action_pressed("ui_right") - Input.is_action_pressed("ui_left")
 	
 	var unitvec = Vector2(directionx, directiony).normalized()
 	velocity = unitvec * DEFAULT_SPEED * delta * delta

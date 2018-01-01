@@ -19,6 +19,9 @@ func _ready():
 	
 func _process(delta):
 	
+	directionx = -1
+	directiony = 0
+	
 	# setting head direction
 	if (directionx == 1):
 		sprite.set_frame(2)
@@ -28,7 +31,17 @@ func _process(delta):
 		sprite.set_frame(0)
 	elif (directiony == 1):
 		sprite.set_frame(1)
+		
+	velocity = Vector2(DEFAULT_SPEED * directionx, DEFAULT_SPEED * directiony)
+	velocity = velocity * delta * delta
+	move(velocity)
 	pass
 	
-func ground_pound():
+func ground_pound(playa):
+	var attack = get_node("shoc/Area2D")
+	var dmg = 0
+	if (attack.overlaps_body(playa)):
+		dmg = attack.return_dmg()
+		
+	return dmg
 	

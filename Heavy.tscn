@@ -1,18 +1,37 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Heavy.gd" type="Script" id=1]
-[ext_resource path="res://26196758_1960507284217445_1785244845_n.tex" type="Texture" id=2]
+[ext_resource path="res://heavy.tex" type="Texture" id=2]
+[ext_resource path="res://shockwave.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 8.86362, 7.80208 )
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "topmove"
+length = 1.4
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+}
 
 [node name="Heavy" type="KinematicBody2D"]
 
+transform/pos = Vector2( 537, 127 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.69231, 0, 0, 1.63445, -3.45486, 8.24788 )
+shapes/0/transform = Matrix32( 1.69231, 0, 0, 1.63445, 0.545166, 6.24788 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -23,13 +42,31 @@ script/script = ExtResource( 1 )
 
 texture = ExtResource( 2 )
 vframes = 4
+hframes = 9
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/topmove = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -3.45486, 8.24788 )
+visibility/visible = false
+transform/pos = Vector2( 0.545166, 6.24788 )
 transform/scale = Vector2( 1.69231, 1.63445 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="shoc" parent="." instance=ExtResource( 3 )]
+
+visibility/visible = false
 
 

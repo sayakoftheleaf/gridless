@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 6.54514, 10.8795 )
+extents = Vector2( 2.54514, 9.05171 )
 
 [sub_resource type="ImageTexture" id=6]
 
@@ -107,7 +107,6 @@ _update_shape_index = 0
 
 visibility/light_mask = 0
 transform/pos = Vector2( 1, -6 )
-transform/scale = Vector2( 2, 2 )
 texture = SubResource( 6 )
 vframes = 4
 hframes = 9

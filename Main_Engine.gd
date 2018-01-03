@@ -21,7 +21,7 @@ func _process(delta):
 	
 	for x in heavies:
 		#total_dmg = x.ground_pound(player)
-		path = navnode.get_simple_path(x.return_pos(), player.get_pos())
+#		path = navnode.get_simple_path(x.return_pos(), player.get_pos())
 		print(path)
 	
 	player.modify_health(total_dmg)

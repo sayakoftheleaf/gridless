@@ -25,19 +25,18 @@ func return_pos():
 	
 func _process(delta):
 	
-	directionx = 0
-	directiony = -1
+	directionx = 1
+	directiony = 0
 	
 	# setting head direction
-	if (directionx == 1): 
-		print ("here")
-		walking_animations.play("topmove")
-	elif (directionx == -1): walking_animations.play("topmove")
+	if (directionx == 1 && walking_animations.get_current_animation()!= "rightmove"): 
+		walking_animations.play("rightmove")
+	elif (directionx == -1 && walking_animations.get_current_animation()!= "leftmove"): 
+		walking_animations.play("leftmove")
 	elif (directiony == -1 && walking_animations.get_current_animation()!= "topmove"): 
-		print ("ty god")
 		walking_animations.play("topmove")
-		print(walking_animations.is_playing())
-	elif (directiony == 1): walking_animations.play("topmove (copy)")
+	elif (directiony == 1 && walking_animations.get_current_animation()!= "botmove"): 
+		walking_animations.play("botmove")
 		
 	velocity = Vector2(DEFAULT_SPEED * directionx, DEFAULT_SPEED * directiony)
 	velocity = velocity * delta * delta

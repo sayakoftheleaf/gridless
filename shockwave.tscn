@@ -27,7 +27,7 @@ tracks/0/keys = {
 
 [node name="Shockwave" type="StaticBody2D"]
 
-transform/pos = Vector2( 0, 2 )
+transform/pos = Vector2( 400, 135 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -46,14 +46,6 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="Area2D" type="Area2D" parent="."]
-
-input/pickable = true
-gravity_vec = Vector2( 0, 0 )
-gravity = 0.0
-linear_damp = 0.1
-angular_damp = 1.0
-
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
@@ -70,5 +62,36 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+input/pickable = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D"]
+
+transform/pos = Vector2( -2, 2 )
+input/pickable = true
+space_override = 1
+gravity_vec = Vector2( 0, 0 )
+gravity = 0.0
+linear_damp = 0.1
+angular_damp = 1.0
 
 

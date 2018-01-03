@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Heavy.gd" type="Script" id=1]
 [ext_resource path="res://heavy.tex" type="Texture" id=2]
-[ext_resource path="res://shockwave.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,32 +21,41 @@ tracks/0/imported = false
 tracks/0/keys = {
 "times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
+"update": 0,
 "values": [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 }
 
 [node name="Heavy" type="KinematicBody2D"]
 
-transform/pos = Vector2( 537, 127 )
+transform/pos = Vector2( 346, 272 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1.69231, 0, 0, 1.63445, 0.545166, 6.24788 )
+shapes/0/transform = Matrix32( 1.69231, 0, 0, 1.63445, 0.545166, 6.24789 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 0.545166, 6.24789 )
+transform/scale = Vector2( 1.69231, 1.63445 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 9
-frame = 1
+frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 
-playback/process_mode = 1
+playback/process_mode = 0
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/topmove = SubResource( 2 )
@@ -55,18 +63,5 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
-visibility/visible = false
-transform/pos = Vector2( 0.545166, 6.24788 )
-transform/scale = Vector2( 1.69231, 1.63445 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
-[node name="shoc" parent="." instance=ExtResource( 3 )]
-
-visibility/visible = false
 
 

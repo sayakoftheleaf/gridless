@@ -7,7 +7,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 2.54514, 9.05171 )
 
-[sub_resource type="ImageTexture" id=6]
+[sub_resource type="ImageTexture" id=2]
 
 resource/name = "26233834_1960234647578042_483444862_n.png"
 flags = 4
@@ -67,9 +67,8 @@ tracks/0/keys = {
 "values": [ 10, 11, 12, 13, 14, 15, 16, 17 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 
-resource/name = "topmove"
 length = 1.4
 loop = true
 step = 0.2
@@ -107,7 +106,7 @@ _update_shape_index = 0
 
 visibility/light_mask = 0
 transform/pos = Vector2( 1, -6 )
-texture = SubResource( 6 )
+texture = SubResource( 2 )
 vframes = 4
 hframes = 9
 frame = 10
@@ -121,7 +120,7 @@ root/root = NodePath("..")
 anims/Leftmov = SubResource( 3 )
 anims/Rightmov = SubResource( 4 )
 anims/botmov = SubResource( 5 )
-anims/topmove = SubResource( 2 )
+anims/topmove = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

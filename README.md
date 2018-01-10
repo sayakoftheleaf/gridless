@@ -8,6 +8,7 @@ TODO:
 - Implement AOE shockwave as a primary attack for the heavies
 - Detect collision between the AOE and the player
 - Auto pathfinding for the heavies
+- Implement invulnerability after getting hit by a heavy
 
 Implemented :
 - Movement of the main character (with all possible combinations)

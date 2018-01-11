@@ -11,7 +11,7 @@ extents = Vector2( 8.86362, 7.80208 )
 [sub_resource type="Animation" id=2]
 
 resource/name = "botmove"
-length = 1.4
+length = 1.6
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -45,7 +45,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 
 resource/name = "rightmove"
-length = 1.4
+length = 1.6
 loop = true
 step = 0.2
 tracks/0/type = "value"
@@ -61,7 +61,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 
-length = 1.4
+length = 1.6
 loop = true
 step = 0.2
 tracks/0/type = "value"
